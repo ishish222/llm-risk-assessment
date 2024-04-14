@@ -1,0 +1,5 @@
+risk_scenario_name,likelihood,description
+DDoS Attack on Service Infrastructure,2,"An attacker targets the company's service infrastructure with a Distributed Denial of Service (DDoS) attack, overwhelming the servers with traffic and making the service unavailable to legitimate users."
+Data Breach Through Phishing Attack,3,An attacker successfully deceives an employee into revealing their credentials through a phishing email. The attacker gains unauthorized access to sensitive data stored on the company’s network.
+Ransomware Infection,2,"Malicious software encrypts critical data and systems, rendering them unusable. The attacker demands a ransom payment for the decryption key. This scenario can disrupt operations and lead to data loss if backups are also compromised."
+Third-Party Service Failure,3,"A critical third-party service provider experiences a failure or security breach, impacting the company’s ability to offer its digital service, either through direct service disruption or through a breach of data shared with the third party."
