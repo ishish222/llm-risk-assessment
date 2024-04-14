@@ -1,0 +1,37 @@
+name: Project terraform - apply
+
+on:
+  workflow_dispatch:
+
+jobs:
+  terraform:
+    name: Deploy the project
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ vars.ROLE_TO_ASSUME }}
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+          aws-region: eu-central-1
+
+      - uses: hashicorp/setup-terraform@v1
+
+      - run: |
+          make all
+        working-directory: .
+
+      - run: terraform init
+        working-directory: terraform
+
+      - run: terraform plan
+        working-directory: terraform
+
+      - run: terraform apply -auto-approve
+        working-directory: terraform
